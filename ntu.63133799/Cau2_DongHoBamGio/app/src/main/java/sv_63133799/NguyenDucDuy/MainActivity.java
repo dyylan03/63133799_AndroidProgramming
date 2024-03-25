@@ -1,4 +1,6 @@
 package sv_63133799.NguyenDucDuy;
+import androidx.core.content.ContextCompat;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private Runnable updateTimer = new Runnable() {
         public void run() {
             timeInMilliseconds = System.currentTimeMillis() - startTime;
@@ -77,22 +80,29 @@ public class MainActivity extends AppCompatActivity {
             handler.postDelayed(this, 0);
         }
     };
+
     private void addLapTime() {
         LinearLayout linearLayoutLaps = findViewById(R.id.linearLayoutLaps);
         TextView lapTextView = new TextView(this);
         lapTextView.setText("Vòng " + lapNumber + ": " + textViewTime.getText());
         lapTextView.setTextSize(20);
 
-        // Tạo một nút Xóa mới
-        Button deleteButton = new Button(this);
-        deleteButton.setText("Xóa");
-        deleteButton.setOnClickListener(new View.OnClickListener() {
+        // Tạo một lớp cho nút Xóa
+        class DeleteButtonOnClickListener implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 // Xóa vòng khi nút xóa được nhấn
                 linearLayoutLaps.removeView((View) v.getParent());
             }
-        });
+        }
+
+        // Tạo một đối tượng lớp DeleteButtonOnClickListener để xử lý sự kiện khi nút xóa được nhấn
+        DeleteButtonOnClickListener deleteButtonOnClickListener = new DeleteButtonOnClickListener();
+        Button deleteButton = new Button(this);
+        deleteButton.setText("Xóa");
+        int color = ContextCompat.getColor(this, R.color.delete_button_color);
+        deleteButton.setBackgroundColor(color);
+        deleteButton.setOnClickListener(deleteButtonOnClickListener);
 
         // Thêm TextView và Button vào một layout ngang
         LinearLayout horizontalLayout = new LinearLayout(this);
@@ -105,6 +115,4 @@ public class MainActivity extends AppCompatActivity {
 
         lapNumber++;
     }
-
-
 }
