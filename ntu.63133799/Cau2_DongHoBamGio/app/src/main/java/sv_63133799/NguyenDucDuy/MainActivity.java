@@ -55,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 linearLayoutLaps.removeAllViews();
             }
         });
+        buttonLap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addLapTime();
+            }
+        });
     }
     private Runnable updateTimer = new Runnable() {
         public void run() {
@@ -71,4 +77,12 @@ public class MainActivity extends AppCompatActivity {
             handler.postDelayed(this, 0);
         }
     };
+    private void addLapTime() {
+        LinearLayout linearLayoutLaps = findViewById(R.id.linearLayoutLaps);
+        TextView lapTextView = new TextView(this);
+        lapTextView.setText("Vòng " + lapNumber + ": " + textViewTime.getText());
+        lapTextView.setTextSize(20);
+        linearLayoutLaps.addView(lapTextView);
+        lapNumber++;
+    }
 }
