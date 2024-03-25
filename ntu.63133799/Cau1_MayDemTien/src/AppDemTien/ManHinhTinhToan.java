@@ -18,12 +18,16 @@ public class ManHinhTinhToan extends JFrame {
 	    private JTextField MenhGia5;
 	    private JTextField MenhGia2;
 	    private JTextField MenhGia1;
+	    private JTextField Dollar;
+	    private JTextField Krone;
+	    private final double EXCHANGE_RATE_DOLLAR = 0.000043;
+	    private final double EXCHANGE_RATE_KRONE = 0.00028;
 
 	    public ManHinhTinhToan() {
 	    	setFont(new Font("Dialog", Font.PLAIN, 18));
 	    	setTitle("CHƯƠNG TRÌNH ĐẾM TIỀN");
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        setBounds(100, 100, 559, 410);
+	        setBounds(100, 100, 634, 530);
 
 	        // Tạo một panel để chứa nội dung bên trong JSplitPane
 	        JPanel mainPanel = new JPanel();
@@ -193,6 +197,40 @@ public class ManHinhTinhToan extends JFrame {
 	        lblNewLabel_1_8.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        lblNewLabel_1_8.setBounds(208, 345, 46, 14);
 	        manHinhPhai.add(lblNewLabel_1_8);
+	        
+	        JLabel lblChuynSangng = new JLabel("Chuyển sang đồng Dollar");
+	        lblChuynSangng.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblChuynSangng.setBounds(29, 396, 169, 14);
+	        manHinhPhai.add(lblChuynSangng);
+	        
+	        JLabel lblChuynSangng_2 = new JLabel("Chuyển sang đồng Đan Mạch");
+	        lblChuynSangng_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblChuynSangng_2.setBounds(29, 445, 169, 14);
+	        manHinhPhai.add(lblChuynSangng_2);
+	        
+	        Dollar = new JTextField();
+	        Dollar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        Dollar.setEnabled(false);
+	        Dollar.setColumns(10);
+	        Dollar.setBounds(213, 393, 63, 20);
+	        manHinhPhai.add(Dollar);
+	        
+	        Krone = new JTextField();
+	        Krone.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        Krone.setEnabled(false);
+	        Krone.setColumns(10);
+	        Krone.setBounds(213, 443, 63, 20);
+	        manHinhPhai.add(Krone);
+	        
+	        JLabel lblNewLabel_1_8_1 = new JLabel("Dollar");
+	        lblNewLabel_1_8_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_8_1.setBounds(288, 397, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_8_1);
+	        
+	        JLabel lblNewLabel_1_8_1_1 = new JLabel("Krone");
+	        lblNewLabel_1_8_1_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_8_1_1.setBounds(288, 446, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_8_1_1);
 	        manHinhTrai.setLayout(null);
 	        
 	        JLabel lblNewLabel = new JLabel("Nhập vào số tiền cần đếm");
@@ -260,6 +298,11 @@ public class ManHinhTinhToan extends JFrame {
 	                    MenhGia5.setText(Integer.toString(count5));
 	                    MenhGia2.setText(Integer.toString(count2));
 	                    MenhGia1.setText(Integer.toString(count1));
+	                    
+	                    double dollarAmount = convertToDollar(amount);
+	                    double kroneAmount = convertToKrone(amount);
+	                    Dollar.setText(String.format("%.2f", dollarAmount));
+	                    Krone.setText(String.format("%.2f", kroneAmount));
 	                } else {
 	                    JOptionPane.showMessageDialog(ManHinhTinhToan.this, "Số tiền nhập không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
 	                }
@@ -284,5 +327,14 @@ public class ManHinhTinhToan extends JFrame {
 	        });
 
 
+	    }
+	 // Phương thức chuyển đổi tiền tệ từ VNĐ sang Dollar
+	    private double convertToDollar(int amountInVND) {
+	        return amountInVND * EXCHANGE_RATE_DOLLAR;
+	    }
+
+	    // Phương thức chuyển đổi tiền tệ từ VNĐ sang Krone Đan Mạch
+	    private double convertToKrone(int amountInVND) {
+	        return amountInVND * EXCHANGE_RATE_KRONE;
 	    }
 }
