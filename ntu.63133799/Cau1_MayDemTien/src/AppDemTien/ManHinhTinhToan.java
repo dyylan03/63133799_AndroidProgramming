@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 public class ManHinhTinhToan extends JFrame {
 
 	 private static final long serialVersionUID = 1L;
-	    private JPanel contentPane;
+//	    private JPanel contentPane;
 	    private JTextField inputTien;
 	    private JTextField MenhGia500;
 	    private JTextField MenhGia200;
@@ -87,6 +87,7 @@ public class ManHinhTinhToan extends JFrame {
 	        manHinhPhai.add(gia1);
 	        
 	        MenhGia500 = new JTextField();
+	        MenhGia500.setEnabled(false);
 	        MenhGia500.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia500.setColumns(10);
 	        MenhGia500.setBounds(135, 22, 63, 20);
@@ -167,8 +168,13 @@ public class ManHinhTinhToan extends JFrame {
 	        
 	        JButton btnDem = new JButton(" Bắt đầu đếm");
 	        btnDem.setFont(new Font("Tahoma", Font.BOLD, 13));
-	        btnDem.setBounds(48, 230, 117, 23);
+	        btnDem.setBounds(20, 230, 169, 23);
 	        manHinhTrai.add(btnDem);
+	        
+	        JButton btnRefesh = new JButton("Làm mới");
+	        btnRefesh.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        btnRefesh.setBounds(20, 288, 169, 23);
+	        manHinhTrai.add(btnRefesh);
 	        splitPane.setDividerLocation(200); // Thiết lập vị trí của đường chia
 
 	        // Đặt JSplitPane vào panel chính
@@ -211,7 +217,26 @@ public class ManHinhTinhToan extends JFrame {
 	                    JOptionPane.showMessageDialog(ManHinhTinhToan.this, "Số tiền nhập không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
 	                }
 	            }
+	            
+	            
 	        });
+	     // Thêm sự kiện cho nút "Làm mới"
+	        btnRefesh.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                // Xóa nội dung của các text field
+	                inputTien.setText("");
+	                MenhGia500.setText("");
+	                MenhGia200.setText("");
+	                MenhGia100.setText("");
+	                MenhGia50.setText("");
+	                MenhGia20.setText("");
+	                MenhGia10.setText("");
+	                MenhGia5.setText("");
+	                MenhGia2.setText("");
+	                MenhGia1.setText("");
+	            }
+	        });
+
 
 	    }
 }
