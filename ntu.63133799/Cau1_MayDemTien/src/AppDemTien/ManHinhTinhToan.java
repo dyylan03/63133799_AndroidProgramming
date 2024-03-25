@@ -38,8 +38,8 @@ public class ManHinhTinhToan extends JFrame {
 	        JPanel manHinhPhai = new JPanel();
 
 	        // Thiết lập layout của mỗi panel con
-	        manHinhTrai.setBackground(new Color(255, 255, 255));
-	        manHinhPhai.setBackground(new Color(255, 255, 255));
+	        manHinhTrai.setBackground(new Color(128, 255, 255));
+	        manHinhPhai.setBackground(new Color(128, 255, 255));
 
 	        // Tạo JSplitPane để chia màn hình thành hai phần
 	        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, manHinhTrai, manHinhPhai);
