@@ -6,16 +6,16 @@ public class ManHinhTinhToan extends JFrame {
 
 	 private static final long serialVersionUID = 1L;
 	    private JPanel contentPane;
-	    private JTextField textField;
-	    private JTextField textField_500;
-	    private JTextField textField_200;
-	    private JTextField textField_100;
-	    private JTextField textField_50;
-	    private JTextField textField_20;
-	    private JTextField textField_10;
-	    private JTextField textField_5;
-	    private JTextField textField_2;
-	    private JTextField textField_1;
+	    private JTextField inputTien;
+	    private JTextField MenhGia500;
+	    private JTextField MenhGia200;
+	    private JTextField MenhGia100;
+	    private JTextField MenhGia50;
+	    private JTextField MenhGia20;
+	    private JTextField MenhGia10;
+	    private JTextField MenhGia5;
+	    private JTextField MenhGia2;
+	    private JTextField MenhGia1;
 
 	    public ManHinhTinhToan() {
 	    	setFont(new Font("Dialog", Font.PLAIN, 18));
@@ -84,59 +84,59 @@ public class ManHinhTinhToan extends JFrame {
 	        gia1.setBounds(29, 344, 107, 14);
 	        manHinhPhai.add(gia1);
 	        
-	        textField_500 = new JTextField();
-	        textField_500.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_500.setColumns(10);
-	        textField_500.setBounds(135, 22, 63, 20);
-	        manHinhPhai.add(textField_500);
+	        MenhGia500 = new JTextField();
+	        MenhGia500.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia500.setColumns(10);
+	        MenhGia500.setBounds(135, 22, 63, 20);
+	        manHinhPhai.add(MenhGia500);
 	        
-	        textField_200 = new JTextField();
-	        textField_200.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_200.setColumns(10);
-	        textField_200.setBounds(135, 60, 63, 20);
-	        manHinhPhai.add(textField_200);
+	        MenhGia200 = new JTextField();
+	        MenhGia200.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia200.setColumns(10);
+	        MenhGia200.setBounds(135, 60, 63, 20);
+	        manHinhPhai.add(MenhGia200);
 	        
-	        textField_100 = new JTextField();
-	        textField_100.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_100.setColumns(10);
-	        textField_100.setBounds(135, 99, 63, 20);
-	        manHinhPhai.add(textField_100);
+	        MenhGia100 = new JTextField();
+	        MenhGia100.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia100.setColumns(10);
+	        MenhGia100.setBounds(135, 99, 63, 20);
+	        manHinhPhai.add(MenhGia100);
 	        
-	        textField_50 = new JTextField();
-	        textField_50.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_50.setColumns(10);
-	        textField_50.setBounds(135, 137, 63, 20);
-	        manHinhPhai.add(textField_50);
+	        MenhGia50 = new JTextField();
+	        MenhGia50.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia50.setColumns(10);
+	        MenhGia50.setBounds(135, 137, 63, 20);
+	        manHinhPhai.add(MenhGia50);
 	        
-	        textField_20 = new JTextField();
-	        textField_20.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_20.setColumns(10);
-	        textField_20.setBounds(135, 177, 63, 20);
-	        manHinhPhai.add(textField_20);
+	        MenhGia20 = new JTextField();
+	        MenhGia20.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia20.setColumns(10);
+	        MenhGia20.setBounds(135, 177, 63, 20);
+	        manHinhPhai.add(MenhGia20);
 	        
-	        textField_10 = new JTextField();
-	        textField_10.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_10.setColumns(10);
-	        textField_10.setBounds(135, 220, 63, 20);
-	        manHinhPhai.add(textField_10);
+	        MenhGia10 = new JTextField();
+	        MenhGia10.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia10.setColumns(10);
+	        MenhGia10.setBounds(135, 220, 63, 20);
+	        manHinhPhai.add(MenhGia10);
 	        
-	        textField_5 = new JTextField();
-	        textField_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_5.setColumns(10);
-	        textField_5.setBounds(135, 261, 63, 20);
-	        manHinhPhai.add(textField_5);
+	        MenhGia5 = new JTextField();
+	        MenhGia5.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia5.setColumns(10);
+	        MenhGia5.setBounds(135, 261, 63, 20);
+	        manHinhPhai.add(MenhGia5);
 	        
-	        textField_2 = new JTextField();
-	        textField_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_2.setColumns(10);
-	        textField_2.setBounds(135, 304, 63, 20);
-	        manHinhPhai.add(textField_2);
+	        MenhGia2 = new JTextField();
+	        MenhGia2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia2.setColumns(10);
+	        MenhGia2.setBounds(135, 304, 63, 20);
+	        manHinhPhai.add(MenhGia2);
 	        
-	        textField_1 = new JTextField();
-	        textField_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField_1.setColumns(10);
-	        textField_1.setBounds(135, 342, 63, 20);
-	        manHinhPhai.add(textField_1);
+	        MenhGia1 = new JTextField();
+	        MenhGia1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        MenhGia1.setColumns(10);
+	        MenhGia1.setBounds(135, 342, 63, 20);
+	        manHinhPhai.add(MenhGia1);
 	        manHinhTrai.setLayout(null);
 	        
 	        JLabel lblNewLabel = new JLabel("Nhập vào số tiền cần đếm");
@@ -144,21 +144,21 @@ public class ManHinhTinhToan extends JFrame {
 	        lblNewLabel.setBounds(20, 108, 179, 14);
 	        manHinhTrai.add(lblNewLabel);
 	        
-	        textField = new JTextField();
-	        textField.setFont(new Font("Tahoma", Font.PLAIN, 13));
-	        textField.setBounds(20, 135, 169, 20);
-	        manHinhTrai.add(textField);
-	        textField.setColumns(10);
+	        inputTien = new JTextField();
+	        inputTien.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        inputTien.setBounds(20, 135, 169, 20);
+	        manHinhTrai.add(inputTien);
+	        inputTien.setColumns(10);
 	        
 	        JLabel lblChn = new JLabel("Chú ý: đơn vị tiền tệ sẽ là VNĐ");
 	        lblChn.setFont(new Font("Tahoma", Font.PLAIN, 12));
 	        lblChn.setBounds(20, 185, 169, 14);
 	        manHinhTrai.add(lblChn);
 	        
-	        JButton btnNewButton = new JButton(" Bắt đầu đếm");
-	        btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
-	        btnNewButton.setBounds(48, 230, 117, 23);
-	        manHinhTrai.add(btnNewButton);
+	        JButton btnDem = new JButton(" Bắt đầu đếm");
+	        btnDem.setFont(new Font("Tahoma", Font.BOLD, 13));
+	        btnDem.setBounds(48, 230, 117, 23);
+	        manHinhTrai.add(btnDem);
 	        splitPane.setDividerLocation(200); // Thiết lập vị trí của đường chia
 
 	        // Đặt JSplitPane vào panel chính
