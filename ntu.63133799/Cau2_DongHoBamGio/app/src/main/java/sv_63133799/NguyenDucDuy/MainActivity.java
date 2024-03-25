@@ -44,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
                 buttonReset.setEnabled(true);
             }
         });
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timeSwapBuff = 0L;
+                startTime = 0L;
+                textViewTime.setText("00:00:00");
+                lapNumber = 1;
+                LinearLayout linearLayoutLaps = findViewById(R.id.linearLayoutLaps);
+                linearLayoutLaps.removeAllViews();
+            }
+        });
     }
     private Runnable updateTimer = new Runnable() {
         public void run() {
