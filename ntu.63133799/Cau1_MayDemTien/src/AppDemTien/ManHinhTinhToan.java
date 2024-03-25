@@ -184,14 +184,18 @@ public class ManHinhTinhToan extends JFrame {
 	        setContentPane(mainPanel);
 	        btnDem.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
-	                // Lấy số tiền nhập vào từ text field inputTien
 	                String inputString = inputTien.getText();
-	                
-	                // Kiểm tra xem số tiền nhập vào có hợp lệ không (ví dụ: không rỗng và là một số)
+
 	                if (!inputString.isEmpty() && inputString.matches("\\d+")) {
+	                	
+
+	                    if (inputString.length() >= 10) {
+	                    	
+	                        JOptionPane.showMessageDialog(ManHinhTinhToan.this, "Số tiền nhập vào vượt quá giới hạn!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+	                        return;
+	                    }
 	                    int amount = Integer.parseInt(inputString);
-	                    
-	                    // Tính toán số tờ tiền của mỗi mệnh giá
+
 	                    int count500 = amount / 500000;
 	                    int count200 = (amount % 500000) / 200000;
 	                    int count100 = ((amount % 500000) % 200000) / 100000;
@@ -201,8 +205,7 @@ public class ManHinhTinhToan extends JFrame {
 	                    int count5 = ((((((amount % 500000) % 200000) % 100000) % 50000) % 20000) % 10000) / 5000;
 	                    int count2 = (((((((amount % 500000) % 200000) % 100000) % 50000) % 20000) % 10000) % 5000) / 2000;
 	                    int count1 = ((((((((amount % 500000) % 200000) % 100000) % 50000) % 20000) % 10000) % 5000) % 2000) / 1000;
-	                    
-	                    // Hiển thị số tờ tiền của mỗi mệnh giá vào các text field tương ứng
+
 	                    MenhGia500.setText(Integer.toString(count500));
 	                    MenhGia200.setText(Integer.toString(count200));
 	                    MenhGia100.setText(Integer.toString(count100));
@@ -213,13 +216,11 @@ public class ManHinhTinhToan extends JFrame {
 	                    MenhGia2.setText(Integer.toString(count2));
 	                    MenhGia1.setText(Integer.toString(count1));
 	                } else {
-	                    // Nếu số tiền nhập không hợp lệ, thông báo cho người dùng
 	                    JOptionPane.showMessageDialog(ManHinhTinhToan.this, "Số tiền nhập không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
 	                }
 	            }
-	            
-	            
 	        });
+
 	     // Thêm sự kiện cho nút "Làm mới"
 	        btnRefesh.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
