@@ -148,6 +148,51 @@ public class ManHinhTinhToan extends JFrame {
 	        MenhGia1.setColumns(10);
 	        MenhGia1.setBounds(135, 342, 63, 20);
 	        manHinhPhai.add(MenhGia1);
+	        
+	        JLabel lblNewLabel_1 = new JLabel("tờ");
+	        lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1.setBounds(208, 24, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1);
+	        
+	        JLabel lblNewLabel_1_1 = new JLabel("tờ");
+	        lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_1.setBounds(208, 63, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_1);
+	        
+	        JLabel lblNewLabel_1_2 = new JLabel("tờ");
+	        lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_2.setBounds(208, 102, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_2);
+	        
+	        JLabel lblNewLabel_1_3 = new JLabel("tờ");
+	        lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_3.setBounds(208, 140, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_3);
+	        
+	        JLabel lblNewLabel_1_4 = new JLabel("tờ");
+	        lblNewLabel_1_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_4.setBounds(208, 180, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_4);
+	        
+	        JLabel lblNewLabel_1_5 = new JLabel("tờ");
+	        lblNewLabel_1_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_5.setBounds(208, 223, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_5);
+	        
+	        JLabel lblNewLabel_1_6 = new JLabel("tờ");
+	        lblNewLabel_1_6.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_6.setBounds(208, 264, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_6);
+	        
+	        JLabel lblNewLabel_1_7 = new JLabel("tờ");
+	        lblNewLabel_1_7.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_7.setBounds(208, 307, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_7);
+	        
+	        JLabel lblNewLabel_1_8 = new JLabel("tờ");
+	        lblNewLabel_1_8.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	        lblNewLabel_1_8.setBounds(208, 345, 46, 14);
+	        manHinhPhai.add(lblNewLabel_1_8);
 	        manHinhTrai.setLayout(null);
 	        
 	        JLabel lblNewLabel = new JLabel("Nhập vào số tiền cần đếm");
