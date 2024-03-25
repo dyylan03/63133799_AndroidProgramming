@@ -1,6 +1,8 @@
 package AppDemTien;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ManHinhTinhToan extends JFrame {
 
@@ -91,48 +93,56 @@ public class ManHinhTinhToan extends JFrame {
 	        manHinhPhai.add(MenhGia500);
 	        
 	        MenhGia200 = new JTextField();
+	        MenhGia200.setEnabled(false);
 	        MenhGia200.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia200.setColumns(10);
 	        MenhGia200.setBounds(135, 60, 63, 20);
 	        manHinhPhai.add(MenhGia200);
 	        
 	        MenhGia100 = new JTextField();
+	        MenhGia100.setEnabled(false);
 	        MenhGia100.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia100.setColumns(10);
 	        MenhGia100.setBounds(135, 99, 63, 20);
 	        manHinhPhai.add(MenhGia100);
 	        
 	        MenhGia50 = new JTextField();
+	        MenhGia50.setEnabled(false);
 	        MenhGia50.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia50.setColumns(10);
 	        MenhGia50.setBounds(135, 137, 63, 20);
 	        manHinhPhai.add(MenhGia50);
 	        
 	        MenhGia20 = new JTextField();
+	        MenhGia20.setEnabled(false);
 	        MenhGia20.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia20.setColumns(10);
 	        MenhGia20.setBounds(135, 177, 63, 20);
 	        manHinhPhai.add(MenhGia20);
 	        
 	        MenhGia10 = new JTextField();
+	        MenhGia10.setEnabled(false);
 	        MenhGia10.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia10.setColumns(10);
 	        MenhGia10.setBounds(135, 220, 63, 20);
 	        manHinhPhai.add(MenhGia10);
 	        
 	        MenhGia5 = new JTextField();
+	        MenhGia5.setEnabled(false);
 	        MenhGia5.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia5.setColumns(10);
 	        MenhGia5.setBounds(135, 261, 63, 20);
 	        manHinhPhai.add(MenhGia5);
 	        
 	        MenhGia2 = new JTextField();
+	        MenhGia2.setEnabled(false);
 	        MenhGia2.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia2.setColumns(10);
 	        MenhGia2.setBounds(135, 304, 63, 20);
 	        manHinhPhai.add(MenhGia2);
 	        
 	        MenhGia1 = new JTextField();
+	        MenhGia1.setEnabled(false);
 	        MenhGia1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	        MenhGia1.setColumns(10);
 	        MenhGia1.setBounds(135, 342, 63, 20);
@@ -166,5 +176,42 @@ public class ManHinhTinhToan extends JFrame {
 
 	        // Đặt panel chính là nội dung của frame
 	        setContentPane(mainPanel);
+	        btnDem.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                // Lấy số tiền nhập vào từ text field inputTien
+	                String inputString = inputTien.getText();
+	                
+	                // Kiểm tra xem số tiền nhập vào có hợp lệ không (ví dụ: không rỗng và là một số)
+	                if (!inputString.isEmpty() && inputString.matches("\\d+")) {
+	                    int amount = Integer.parseInt(inputString);
+	                    
+	                    // Tính toán số tờ tiền của mỗi mệnh giá
+	                    int count500 = amount / 500000;
+	                    int count200 = (amount % 500000) / 200000;
+	                    int count100 = ((amount % 500000) % 200000) / 100000;
+	                    int count50 = (((amount % 500000) % 200000) % 100000) / 50000;
+	                    int count20 = ((((amount % 500000) % 200000) % 100000) % 50000) / 20000;
+	                    int count10 = (((((amount % 500000) % 200000) % 100000) % 50000) % 20000) / 10000;
+	                    int count5 = ((((((amount % 500000) % 200000) % 100000) % 50000) % 20000) % 10000) / 5000;
+	                    int count2 = (((((((amount % 500000) % 200000) % 100000) % 50000) % 20000) % 10000) % 5000) / 2000;
+	                    int count1 = ((((((((amount % 500000) % 200000) % 100000) % 50000) % 20000) % 10000) % 5000) % 2000) / 1000;
+	                    
+	                    // Hiển thị số tờ tiền của mỗi mệnh giá vào các text field tương ứng
+	                    MenhGia500.setText(Integer.toString(count500));
+	                    MenhGia200.setText(Integer.toString(count200));
+	                    MenhGia100.setText(Integer.toString(count100));
+	                    MenhGia50.setText(Integer.toString(count50));
+	                    MenhGia20.setText(Integer.toString(count20));
+	                    MenhGia10.setText(Integer.toString(count10));
+	                    MenhGia5.setText(Integer.toString(count5));
+	                    MenhGia2.setText(Integer.toString(count2));
+	                    MenhGia1.setText(Integer.toString(count1));
+	                } else {
+	                    // Nếu số tiền nhập không hợp lệ, thông báo cho người dùng
+	                    JOptionPane.showMessageDialog(ManHinhTinhToan.this, "Số tiền nhập không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+	                }
+	            }
+	        });
+
 	    }
 }
