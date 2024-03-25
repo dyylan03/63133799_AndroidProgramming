@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_vertical"
     android:padding="16dp">
+
     <!-- Header -->
     <TextView
         android:id="@+id/headerTextView"
@@ -14,7 +14,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="32dp" />
+
     <!-- Hiển thị thời gian -->
     <TextView
         android:id="@+id/textViewTime"
@@ -23,16 +24,7 @@
         android:textSize="35sp"
         android:text="00h: 00m: 00s: 000ms"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
-
-    <!-- Hiển thị vòng 1 và vòng 2 -->
-    <LinearLayout
-        android:id="@+id/linearLayoutLaps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- Các nút điều khiển -->
     <LinearLayout
@@ -47,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bắt đầu"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="16dp" />
 
         <!-- Nút Pause -->
         <Button
@@ -55,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tạm dừng"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="16dp" />
 
         <!-- Nút Reset -->
         <Button
@@ -63,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Làm mới"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="16dp" />
 
     </LinearLayout>
 
@@ -73,6 +65,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Vòng"/>
+        android:text="Vòng" />
+
+    <!-- Hiển thị vòng 1 và vòng 2 -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutLaps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+    </ScrollView>
 
 </LinearLayout>
