@@ -36,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
                 buttonReset.setEnabled(false);
             }
         });
+        buttonPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timeSwapBuff += timeInMilliseconds;
+                handler.removeCallbacks(updateTimer);
+                buttonReset.setEnabled(true);
+            }
+        });
     }
     private Runnable updateTimer = new Runnable() {
         public void run() {
