@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 timeSwapBuff = 0L;
                 startTime = 0L;
-                textViewTime.setText("00:00:00");
+                textViewTime.setText("00h: 00m: 00s: 000ms");
                 lapNumber = 1;
                 LinearLayout linearLayoutLaps = findViewById(R.id.linearLayoutLaps);
                 linearLayoutLaps.removeAllViews();
@@ -82,7 +82,29 @@ public class MainActivity extends AppCompatActivity {
         TextView lapTextView = new TextView(this);
         lapTextView.setText("Vòng " + lapNumber + ": " + textViewTime.getText());
         lapTextView.setTextSize(20);
-        linearLayoutLaps.addView(lapTextView);
+
+        // Tạo một nút Xóa mới
+        Button deleteButton = new Button(this);
+        deleteButton.setText("Xóa");
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xóa vòng khi nút xóa được nhấn
+                linearLayoutLaps.removeView((View) v.getParent());
+            }
+        });
+
+        // Thêm TextView và Button vào một layout ngang
+        LinearLayout horizontalLayout = new LinearLayout(this);
+        horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+        horizontalLayout.addView(lapTextView);
+        horizontalLayout.addView(deleteButton);
+
+        // Thêm layout ngang vào layout chính
+        linearLayoutLaps.addView(horizontalLayout);
+
         lapNumber++;
     }
+
+
 }
