@@ -1,6 +1,6 @@
 package sv_63133799.NguyenDucDuy;
 import androidx.core.content.ContextCompat;
-
+import android.widget.Toast;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private long updatedTime = 0L;
     private Handler handler = new Handler();
     private int lapNumber = 1;
+    private static final int MAX_LAPS = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,13 @@ public class MainActivity extends AppCompatActivity {
         buttonLap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addLapTime();
+                // Kiểm tra nếu số lượng vòng đã đạt đến giới hạn
+                if (lapNumber <= MAX_LAPS) {
+                    addLapTime();
+                } else {
+                    // Hiển thị thông báo hoặc thực hiện hành động phù hợp khi đạt đến giới hạn
+                    Toast.makeText(MainActivity.this, "Đã đạt đến giới hạn vòng.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
